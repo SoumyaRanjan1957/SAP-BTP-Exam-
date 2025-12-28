@@ -1,10 +1,6 @@
 let shuffledQuestions = [];
 let submitted = false;
 
-function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
 function renderQuestions() {
   const container = document.getElementById("question-container");
   container.innerHTML = "";
@@ -63,6 +59,7 @@ function submitExam() {
   questionDivs.forEach((div, qIndex) => {
     const inputs = div.querySelectorAll("input");
     const selected = [];
+
     inputs.forEach((inp, i) => {
       if (inp.checked) selected.push(i);
       inp.disabled = true;
@@ -93,24 +90,14 @@ function retakeExam() {
   document.getElementById("result").innerText = "";
   document.getElementById("retakeBtn").classList.add("hidden");
 
-  shuffledQuestions = shuffle(
-    questions.map(q => ({
-      ...q,
-      options: shuffle([...q.options])
-    }))
-  );
-
+  // ✅ NO SHUFFLE ON RETAKE
+  shuffledQuestions = questions.map(q => ({ ...q }));
   renderQuestions();
 }
 
 document.getElementById("submitBtn").addEventListener("click", submitExam);
 document.getElementById("retakeBtn").addEventListener("click", retakeExam);
 
-// INITIAL LOAD
-shuffledQuestions = shuffle(
-  questions.map(q => ({
-    ...q,
-    options: shuffle([...q.options])
-  }))
-);
+// ✅ INITIAL LOAD (NO SHUFFLE)
+shuffledQuestions = questions.map(q => ({ ...q }));
 renderQuestions();
