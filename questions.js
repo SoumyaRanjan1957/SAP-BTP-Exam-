@@ -160,17 +160,6 @@
     ],
     correctAnswers: [3]
   },
-    {
-    id: 15,
-    question: "What type of document is generated for an external network activity?",
-    options: [
-      "Production order",
-      "Sales order",
-      "Reservation",
-      "Purchase requisition"
-    ],
-    correctAnswers: [3]
-  },
   {
     id: 16,
     question: "What general ledger accounts receive postings when performing the goods receipt?",
@@ -326,17 +315,6 @@
       "Storage location"
     ],
     correctAnswers: [1]
-  },
-  {
-    id: 30,
-    question: "What master data record can be created automatically when creating an equipment master?",
-    options: [
-      "Functional location",
-      "Material",
-      "Asset",
-      "Maintenance BOM"
-    ],
-    correctAnswers: [2]
   },
   {
   id: 30,
@@ -871,24 +849,14 @@
     ],
     correctAnswers: [2]
   },
-
-  /* … QUESTIONS CONTINUE IN SAME PATTERN … */
-
-  {
-    id: 98,
-    question: "Where do you maintain primary and secondary cost elements?",
-    options: [
-      "Cost Element Accounting",
-      "Profit Center Accounting",
-      "General Ledger Accounting",
-      "Cost Center Accounting"
-    ],
-    correctAnswers: [2]
-  },
   {
     id: 99,
-    question: "Question 99",
-    options: ["Answer 135"],
+    question: "Which Business processes post to the general ledger",
+    options: ["Posting an activity allocation",
+             "Posting an activity price",
+             "Goods issue from stock",
+             "purchse order creation",
+             "Depreciation"],
     correctAnswers: [0]
   },
   {
@@ -903,6 +871,7 @@
     correctAnswers: [1]
   }
 ];
+
 
 
 
